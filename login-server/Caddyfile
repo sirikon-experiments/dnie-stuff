@@ -2,4 +2,9 @@ https://dnietest.srk.bz {
 	root * /opt/dnie-stuff/login-server/root
 	file_server
     templates
+
+    client_auth {
+        mode require_and_verify
+        trusted_ca_cert_file /opt/dnie-stuff/login-server/fnmt.cer
+    }
 }
