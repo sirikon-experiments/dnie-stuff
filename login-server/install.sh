@@ -19,14 +19,17 @@ openssl x509 -inform der -in fnmt.cer -out fnmt.pem
 
 curl -Lo "dnie-04.zip" "https://www.dnielectronico.es/ZIP/ACDNIE004.crt.zip"
 unzip "dnie-04.zip"
-mv *.crt dnie-004.pem
+mv *.crt dnie-004.crt
+openssl x509 -inform der -in dnie-004.crt -out dnie-004.pem
 
 curl -Lo "dnie-05.zip" "https://www.dnielectronico.es/ZIP/ACDNIE005.crt.zip"
 unzip "dnie-05.zip"
-mv *.crt dnie-005.pem
+mv *.crt dnie-005.crt
+openssl x509 -inform der -in dnie-005.crt -out dnie-005.pem
 
 curl -Lo "dnie-06.zip" "https://www.dnielectronico.es/ZIP/ACDNIE006.crt.zip"
 unzip "dnie-06.zip"
-mv *.crt dnie-006.pem
+mv *.crt dnie-006.crt
+openssl x509 -inform der -in dnie-006.crt -out dnie-006.pem
 
 systemctl restart caddy
