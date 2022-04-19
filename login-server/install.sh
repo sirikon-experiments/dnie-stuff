@@ -5,11 +5,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 function main { (
     ensure_caddy
     ensure_unzip
+    download_certs
 
     echo "import $(pwd)/Caddyfile" >/etc/caddy/Caddyfile
-
     systemctl restart caddy
-
 ); }
 
 function ensure_caddy { (
