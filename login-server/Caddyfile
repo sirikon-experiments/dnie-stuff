@@ -1,4 +1,5 @@
 https://dnietest.srk.bz {
 	root * /opt/dnie-stuff/login-server/root
 	file_server
+    templates
 }
