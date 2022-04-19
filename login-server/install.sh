@@ -10,9 +10,9 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo 
 apt update
 apt install -y caddy
 
-rm *.zip
-rm *.pem
-rm *.crt
+rm -rf *.zip
+rm -rf *.pem
+rm -rf *.crt
 
 echo "import $(pwd)/Caddyfile" > /etc/caddy/Caddyfile
 curl -Lo "fnmt.cer" "https://www.sede.fnmt.gob.es/documents/10445900/10526749/AC_Raiz_FNMT-RCM_SHA256.cer"
