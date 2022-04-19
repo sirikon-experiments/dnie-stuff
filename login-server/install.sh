@@ -4,7 +4,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 apt update
 apt upgrade -y
-apt install -y debian-keyring debian-archive-keyring apt-transport-https
+apt install -y debian-keyring debian-archive-keyring apt-transport-https unzip
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/caddy-stable.asc
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
 apt update
@@ -14,5 +14,8 @@ echo "import $(pwd)/Caddyfile" > /etc/caddy/Caddyfile
 curl -Lo "fnmt.cer" "https://www.sede.fnmt.gob.es/documents/10445900/10526749/AC_Raiz_FNMT-RCM_SHA256.cer"
 openssl x509 -inform der -in fnmt.cer -out fnmt.pem
 
+curl -Lo "dnie.zip" "https://www.dnielectronico.es/ZIP/ACRAIZ-DNIE2.zip"
+unzip "dnie.zip"
+mv *.crt dnie.pem
 
 systemctl restart caddy
