@@ -3,6 +3,11 @@ https://dnietest.srk.bz {
 	file_server
     templates
 
+    respond /subject 200 {
+        body {http.request.tls.client.subject}
+        close
+    }
+
     tls {
         client_auth {
             mode require_and_verify
