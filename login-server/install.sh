@@ -22,7 +22,7 @@ curl -Lo "dnie-05.zip" "https://www.dnielectronico.es/ZIP/ACDNIE005.crt.zip"
 unzip "dnie-05.zip"
 mv *.crt dnie-005.pem
 
-curl -Lo "dnie-05.zip" "https://www.dnielectronico.es/ZIP/ACDNIE006.crt.zip"
+curl -Lo "dnie-06.zip" "https://www.dnielectronico.es/ZIP/ACDNIE006.crt.zip"
 unzip "dnie-06.zip"
 mv *.crt dnie-006.pem
 
