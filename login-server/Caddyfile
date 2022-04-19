@@ -1,0 +1,6 @@
+https://dnietest.srk.bz {
+	root * ./root
+
+	file_server
+    templates
+}
