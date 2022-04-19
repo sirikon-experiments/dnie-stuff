@@ -26,4 +26,6 @@ curl -Lo "dnie-05.zip" "https://www.dnielectronico.es/ZIP/ACDNIE006.crt.zip"
 unzip "dnie-06.zip"
 mv *.crt dnie-006.pem
 
+rm *.zip
+
 systemctl restart caddy
