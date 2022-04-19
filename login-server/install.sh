@@ -10,6 +10,9 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo 
 apt update
 apt install -y caddy
 
+rm *.zip
+rm *.pem
+
 echo "import $(pwd)/Caddyfile" > /etc/caddy/Caddyfile
 curl -Lo "fnmt.cer" "https://www.sede.fnmt.gob.es/documents/10445900/10526749/AC_Raiz_FNMT-RCM_SHA256.cer"
 openssl x509 -inform der -in fnmt.cer -out fnmt.pem
@@ -25,7 +28,5 @@ mv *.crt dnie-005.pem
 curl -Lo "dnie-06.zip" "https://www.dnielectronico.es/ZIP/ACDNIE006.crt.zip"
 unzip "dnie-06.zip"
 mv *.crt dnie-006.pem
-
-rm *.zip
 
 systemctl restart caddy
