@@ -31,9 +31,9 @@ pcsc.on('reader', (reader) => {
           } else {
             // console.log('Protocol(', reader.name, '):', protocol);
 
-            reader.transmit(Buffer.from([0x00, 0xB0, 0x00, 0x00, 0x20]), 40, protocol, function (err, data) {
+            reader.transmit(Buffer.from("90b8000007", "hex"), 4096, protocol, function (err, data) {
               if (err) { console.log(err); return; }
-              console.log('Data received', data);
+              console.log('Serial number', data);
             });
           }
         });
