@@ -18,6 +18,21 @@ echo "import $(pwd)/Caddyfile" > /etc/caddy/Caddyfile
 curl -Lo "fnmt.cer" "https://www.sede.fnmt.gob.es/documents/10445900/10526749/AC_Raiz_FNMT-RCM_SHA256.cer"
 openssl x509 -inform der -in fnmt.cer -out fnmt.pem
 
+curl -Lo "dnie-01.zip" "https://www.dnielectronico.es/ZIP/ACDNIE001.crt.zip"
+unzip "dnie-01.zip"
+mv *.crt dnie-001.cer
+openssl x509 -inform der -in dnie-001.cer -out dnie-001.pem
+
+curl -Lo "dnie-02.zip" "https://www.dnielectronico.es/ZIP/ACDNIE002.crt.zip"
+unzip "dnie-02.zip"
+mv *.crt dnie-002.cer
+openssl x509 -inform der -in dnie-002.cer -out dnie-002.pem
+
+curl -Lo "dnie-03.zip" "https://www.dnielectronico.es/ZIP/ACDNIE003.crt.zip"
+unzip "dnie-03.zip"
+mv *.crt dnie-003.cer
+openssl x509 -inform der -in dnie-003.cer -out dnie-003.pem
+
 curl -Lo "dnie-04.zip" "https://www.dnielectronico.es/ZIP/ACDNIE004.crt.zip"
 unzip "dnie-04.zip"
 mv *.crt dnie-004.cer

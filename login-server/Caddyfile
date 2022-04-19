@@ -12,6 +12,9 @@ https://dnietest.srk.bz {
         client_auth {
             mode require_and_verify
             trusted_ca_cert_file /opt/dnie-stuff/login-server/fnmt.pem
+            trusted_ca_cert_file /opt/dnie-stuff/login-server/dnie-001.pem
+            trusted_ca_cert_file /opt/dnie-stuff/login-server/dnie-002.pem
+            trusted_ca_cert_file /opt/dnie-stuff/login-server/dnie-003.pem
             trusted_ca_cert_file /opt/dnie-stuff/login-server/dnie-004.pem
             trusted_ca_cert_file /opt/dnie-stuff/login-server/dnie-005.pem
             trusted_ca_cert_file /opt/dnie-stuff/login-server/dnie-006.pem
