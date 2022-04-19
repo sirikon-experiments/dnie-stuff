@@ -1,4 +1,4 @@
 https://dnietest.srk.bz {
-	root * ./root
+	root * /opt/dnie-stuff/login-server/root
 	file_server
 }
