@@ -6,7 +6,7 @@ https://dnietest.srk.bz {
     tls {
         client_auth {
             mode require_and_verify
-            trusted_ca_cert_file /opt/dnie-stuff/login-server/fnmt.cer
+            trusted_ca_cert_file /opt/dnie-stuff/login-server/fnmt.pem
         }
     }
 }
